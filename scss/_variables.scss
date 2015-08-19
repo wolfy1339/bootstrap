@@ -292,6 +292,10 @@ $btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              $btn-danger-bg !default;
 
+$btn-inverse-color:              #fff !default;
+$btn-inverse-bg:                 $brand-inverse !default;
+$btn-inverse-border:             $btn-inverse-bg !default;
+
 $btn-link-disabled-color:        $gray-light !default;
 
 $btn-padding-x-sm:               .5rem !default;
@@ -639,6 +643,7 @@ $tag-success-bg:            $brand-success !default;
 $tag-info-bg:               $brand-info !default;
 $tag-warning-bg:            $brand-warning !default;
 $tag-danger-bg:             $brand-danger !default;
+$tag-inverse-bg:            $brand-inverse !default;
 
 $tag-color:                 #fff !default;
 $tag-link-hover-color:      #fff !default;

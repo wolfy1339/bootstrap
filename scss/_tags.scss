@@ -75,3 +75,7 @@ a.tag {
 .tag-danger {
   @include tag-variant($tag-danger-bg);
 }
+
+.tag-inverse {
+  @include tag-variant($tag-inverse-bg);
+}
