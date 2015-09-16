@@ -64,6 +64,31 @@ input[type="file"] {
 input[type="range"] {
   display: block;
   width: 100%;
+  
+  &.form-control {
+    padding: 0;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: 1px solid @btn-primary-border;
+      border-radius: @border-radius-base;
+      height: inherit;
+      width: (@input-height-base + 2);
+    }
+    &::-moz-range-thumb {
+      -moz-appearance: none;
+      border: 1px solid @btn-primary-border;
+      border-radius: @border-radius-base;
+      height: inherit;
+      width: (@input-height-base + 2);
+    }
+    &::-ms-thumb {
+      border: 1px solid @btn-primary-border;
+      border-radius: @border-radius-base;
+      height: inherit;
+      width: (@input-height-base + 2);
+    }
+  }
 }
 
 // Make multiple select elements height not fixed
