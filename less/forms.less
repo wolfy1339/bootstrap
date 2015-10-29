@@ -65,30 +65,47 @@ input[type="range"] {
   display: block;
   width: 100%;
   -webkit-appearance: none;
-  
-  &.form-control {
-    padding: 0;
+  border: 1px solid #ccc;
+  margin-bottom: @input-height-base;
 
-    &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: 1px solid @input-color;
-      border-radius: @border-radius-base;
-      height: inherit;
-      width: (@input-height-base + 2);
-    }
-    &::-moz-range-thumb {
-      -moz-appearance: none;
-      border: 1px solid @input-color;
-      border-radius: @border-radius-base;
-      height: inherit;
-      width: (@input-height-base + 2);
-    }
-    &::-ms-thumb {
-      border: 1px solid @btn-primary-border;
-      border-radius: @border-radius-base;
-      height: inherit;
-      width: (@input-height-base + 2);
-    }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid @input-color;
+    border-radius: @border-radius-base;
+    height: @input-height-base;
+    width: (@input-height-base + 2px);
+  }
+  &::-moz-range-thumb {
+    -moz-appearance: none;
+    border: 1px solid @input-color;
+    border-radius: @border-radius-base;
+    height: @input-height-base;
+    width: (@input-height-base + 2px);
+  }
+  &::-ms-track {
+    height: @slider-height;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background: @input-color;
+    border-radius: @border-radius-base;
+  }
+  &::-ms-thumb {
+    border: 1px solid @input-color;
+    height: @slider-height;
+    width: @slider-width;
+    background: @text-color;
+    border-radius: @border-radius-base;
   }
 }
 
