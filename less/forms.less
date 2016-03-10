@@ -65,25 +65,46 @@ input[type="range"] {
   display: block;
   width: 100%;
   -webkit-appearance: none;
-  border: 1px solid #ccc;
+  height: @input-height-base;
   margin-bottom: @input-height-base;
+  border: 1px solid @input-border;
+  border-radius: @input-border-radius;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border-color ease-in-out .15s,box-shadow ease-in-out .15s");
 
+  // Customize the `:focus` state to imitate native WebKit styles.
+  .form-control-focus();
+
+  &::-webkit-slider-runnable-track {
+    height: @slider-height;
+    background: transparent;
+  }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 1px solid @input-color;
-    border-radius: @border-radius-base;
-    height: @input-height-base;
     width: (@input-height-base + 2px);
+    height: @input-height-base;
+    border: 1px solid @input-color;
+    border-radius: @input-border-radius;
+  }
+
+  &::-moz-range-track {
+    height: @input-height-base;
+    background: transparent;
+    border: none;
   }
   &::-moz-range-thumb {
     -moz-appearance: none;
-    border: 1px solid @input-color;
-    border-radius: @border-radius-base;
-    height: @input-height-base;
     width: (@input-height-base + 2px);
+    height: @input-height-base;
+    border: 1px solid @input-color;
+    border-radius: @input-border-radius;
   }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
   &::-ms-track {
-    height: @slider-height;
+    height: @input-height-base;
     /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
     background: transparent;
 
@@ -94,18 +115,16 @@ input[type="range"] {
     /*remove default tick marks*/
     color: transparent;
   }
-
   &::-ms-fill-lower,
   &::-ms-fill-upper {
-    background: @input-color;
-    border-radius: @border-radius-base;
+    background: transparent;
+    border-radius: @input-border-radius;
   }
   &::-ms-thumb {
+    height: @input-height-base;
+    width: (@input-height-base + 2px);
     border: 1px solid @input-color;
-    height: @slider-height;
-    width: @slider-width;
-    background: @text-color;
-    border-radius: @border-radius-base;
+    border-radius: @input-border-radius;
   }
 }
 
