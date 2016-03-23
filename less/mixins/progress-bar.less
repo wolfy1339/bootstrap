@@ -4,7 +4,7 @@
   background-color: @color;
 
   // Deprecated parent class requirement as of v3.2.0
-  .progress-striped & {
-    #gradient > .striped();
+  .progress-bar-striped&, .progress-striped & {
+    #gradient > .striped(@color; @body-bg; 90deg);
   }
 }
