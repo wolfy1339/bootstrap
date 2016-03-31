@@ -8,7 +8,16 @@
   margin-bottom: @line-height-computed;
   list-style: none;
   background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
+
+  a {
+    color: @link-color;
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   > li {
     display: inline-block;
@@ -22,5 +31,25 @@
 
   > .active {
     color: @breadcrumb-active-color;
+  }
+
+  .fa,
+  .glyphicon {
+    color: @text-color;
+  }
+}
+
+.breadcrumb-inverse {
+  background-color: @m8tro-theme;
+
+  .fa,
+  .glyphicon {
+    color: @body-bg;
+  }
+
+  a,
+  > li + li:before,
+  > .active {
+    color: @body-bg;
   }
 }
