@@ -20,8 +20,14 @@
   }
 
   // Provide class for links that match alerts
-  .alert-link {
+  .alert-link,
+  a {
     font-weight: @alert-link-font-weight;
+    color: #fff;
+
+    &:hover {
+      color: #000;
+    }
   }
 
   // Improve alignment and spacing of inner content
@@ -48,7 +54,8 @@
     position: relative;
     top: -2px;
     right: -21px;
-    color: inherit;
+    color: @gray-dark;
+    .opacity(1)
   }
 }
 
