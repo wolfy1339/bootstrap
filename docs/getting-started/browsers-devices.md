@@ -159,9 +159,9 @@ No support will be provided for this, though you may find some help from the com
 
 Bootstrap is not supported in the old Internet Explorer compatibility modes. To be sure you're using the latest rendering mode for IE, consider including the appropriate `<meta>` tag in your pages:
 
-{% highlight html %}
+```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-{% endhighlight %}
+```
 
 Confirm the document mode by opening the debugging tools: press <kbd>F12</kbd> and check the "Document Mode".
 
@@ -173,7 +173,7 @@ See [this StackOverflow question](https://stackoverflow.com/questions/6771258/wh
 
 Internet Explorer 10 in Windows Phone 8 versions older than [Update 3 (a.k.a. GDR3)](http://blogs.windows.com/windows_phone/b/wpdev/archive/2013/10/14/introducing-windows-phone-preview-for-developers.aspx) doesn't differentiate **device width** from **viewport width** in `@-ms-viewport` at-rules, and thus doesn't properly apply the media queries in Bootstrap's CSS. To address this, you'll need to **include the following JavaScript to work around the bug**.
 
-{% highlight js %}
+```js
 // Copyright 2014-2015 Twitter, Inc.
 // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -185,7 +185,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   )
   document.head.appendChild(msViewportStyle)
 }
-{% endhighlight %}
+```
 
 For more information and usage guidelines, read [Windows Phone 8 and Device-Width](http://timkadlec.com/2013/01/windows-phone-8-and-device-width/).
 
@@ -226,13 +226,13 @@ In particular, as of Chrome v32 and regardless of margin settings, Chrome uses a
 
 Also, as of Safari v8.0, use of the fixed-width `.container` class can cause Safari to use an unusually small font size when printing. See [issue #14868](https://github.com/twbs/bootstrap/issues/14868) and [WebKit bug #138192](https://bugs.webkit.org/show_bug.cgi?id=138192) for more details. One potential workaround is the following CSS:
 
-{% highlight css %}
+```css
 @media print {
   .container {
     width: auto;
   }
 }
-{% endhighlight %}
+```
 
 ## Android stock browser
 
@@ -242,7 +242,7 @@ Out of the box, Android 4.1 (and even some newer releases apparently) ship with 
 
 On `<select>` elements, the Android stock browser will not display the side controls if there is a `border-radius` and/or `border` applied. (See [this StackOverflow question](https://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with) for details.) Use the snippet of code below to remove the offending CSS and render the `<select>` as an unstyled element on the Android stock browser. The user agent sniffing avoids interference with Chrome, Safari, and Mozilla browsers.
 
-{% highlight html %}
+```html
 <script>
 $(function () {
   var nua = navigator.userAgent
@@ -252,7 +252,7 @@ $(function () {
   }
 })
 </script>
-{% endhighlight %}
+```
 
 Want to see an example? [Check out this JS Bin demo.](http://jsbin.com/OyaqoDO/2)
 
